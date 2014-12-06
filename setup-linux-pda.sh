@@ -17,6 +17,7 @@ cd ${OE_BASE}/build-${DISTRO} && source env.source && ${OE_BASE}/bb/bin/bitbake 
 			exit 1
 		fi
 		cp -R ${OE_BASE}/build-${DISTRO}/tmp/work/pda-*-linux-gnueabi/linux-pda-*/linux-*/*  linux-pda-sa1110/
+		cp ${OE_BASE}/build-${DISTRO}/tmp/work/pda-*-linux-gnueabi/linux-pda-*/linux-*/.config* linux-pda-sa1110/
 	fi
 	cp _compile.sh _debug.sh _env.sh linux-pda-sa1110/
 	chmod +x linux-pda-sa1110/_compile.sh linux-pda-sa1110/_debug.sh
