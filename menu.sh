@@ -2,4 +2,4 @@
 
 . _env.sh
 
-make ARCH=arm nconfig
+make ARCH=arm menuconfig
