@@ -19,7 +19,7 @@ cd ${OE_BASE}/build-${DISTRO} && source env.source && ${OE_BASE}/bb/bin/bitbake 
 		cp -R ${OE_BASE}/build-${DISTRO}/tmp/work/pda-*-linux-gnueabi/linux-pda-*/linux-*/*  linux-pda-sa1110/
 		cp ${OE_BASE}/build-${DISTRO}/tmp/work/pda-*-linux-gnueabi/linux-pda-*/linux-*/.config* linux-pda-sa1110/
 	fi
-	cp build.sh debug.sh menu.sh _env.sh linux-pda-sa1110/
-	chmod +x linux-pda-sa1110/build.sh linux-pda-sa1110/debug.sh linux-pda-sa1110/menu.sh
+	cp build.sh clean.sh debug.sh menu.sh _env.sh linux-pda-sa1110/
+	chmod +x linux-pda-sa1110/build.sh linux-pda-sa1110/clean.sh linux-pda-sa1110/debug.sh linux-pda-sa1110/menu.sh
 	echo ;echo "--- Setup done ---"; echo
 }
