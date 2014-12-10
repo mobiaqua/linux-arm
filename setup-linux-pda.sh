@@ -4,7 +4,8 @@ echo
 echo "Checking linux-pda prepared..."
 echo
 curdir=$PWD
-cd ${OE_BASE}/build-${DISTRO} && source env.source && ${OE_BASE}/bb/bin/bitbake linux-pda -cconfigure && {
+cd ${OE_BASE}/build-${DISTRO} && source env.source && ${OE_BASE}/bb/bin/bitbake linux-pda -cclean &&
+		${OE_BASE}/bb/bin/bitbake linux-pda -cconfigure && {
 	cd ${curdir}
 	if [ ! -e linux-pda-sa1110/Makefile ]; then
 		echo
