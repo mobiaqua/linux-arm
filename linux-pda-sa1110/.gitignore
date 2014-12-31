@@ -132,3 +132,13 @@ Makefile
 README
 REPORTING-BUGS
 *.sh
+kernel-arm-sa1110.IAB
+kernel-arm-sa1110.IAD
+kernel-arm-sa1110.IMB
+kernel-arm-sa1110.IMD
+kernel-arm-sa1110.PFI
+kernel-arm-sa1110.PO
+kernel-arm-sa1110.PR
+kernel-arm-sa1110.PRI
+kernel-arm-sa1110.PS
+kernel-arm-sa1110.WK3
