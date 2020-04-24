@@ -4,3 +4,4 @@ if [ ! `echo ${PATH} | grep armv4/bin` ]; then
 	export PATH="${toolsroot}/bin:${toolsroot}/armv4/bin:${PATH}"
 fi
 export HOST_INC="-I${toolsroot}/include"
+export CROSS_COMPILE=arm-linux-gnueabi-
