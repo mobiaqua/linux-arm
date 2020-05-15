@@ -16,7 +16,7 @@ if [ ! -e linux/Makefile ]; then
 			echo
 			echo "Copy linux sources..."
 			echo
-			cp -R ${OE_BASE}/build-${DISTRO}/tmp/work/board-tv-linux-gnueabi/linux-*/git/ linux/
+			cp -R ${OE_BASE}/build-${DISTRO}/tmp/work/board-tv-linux-gnueabi/linux-omap4-*/git/ linux/
 			cp build.sh clean.sh debug.sh menu.sh _env.sh linux/
 			chmod +x linux/*.sh
 			echo ;echo "--- Setup done ---"; echo
