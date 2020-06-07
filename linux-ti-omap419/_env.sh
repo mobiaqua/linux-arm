@@ -9,3 +9,4 @@ export HOSTCFLAGS="${ssl_cflags} -I${toolsroot}/include"
 export HOSTLDFLAGS="${ssl_ldflags} -I${toolsroot}/lib"
 export CROSS_COMPILE=arm-linux-gnueabi-
 export LOADADDR=0x80008000
+export LD_LIBRARY_PATH=${toolsroot}/lib
