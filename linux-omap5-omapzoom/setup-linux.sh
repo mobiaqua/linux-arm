@@ -10,13 +10,13 @@ if [ ! -e linux/Makefile ]; then
 	curdir=$PWD
 	cd ${OE_BASE}/build-${DISTRO} &&
 		source env.source &&
-		${OE_BASE}/bb/bin/bitbake linux-omap5-old -cclean &&
-		${OE_BASE}/bb/bin/bitbake linux-omap5-old -cconfigure && {
+		${OE_BASE}/bb/bin/bitbake linux-omap5-omapzoom -cclean &&
+		${OE_BASE}/bb/bin/bitbake linux-omap5-omapzoom -cconfigure && {
 			cd ${curdir}
 			echo
 			echo "Copy linux sources..."
 			echo
-			cp -R ${OE_BASE}/build-${DISTRO}/tmp/work/board-tv-linux-gnueabi/linux-omap5-old*/git/ linux/
+			cp -R ${OE_BASE}/build-${DISTRO}/tmp/work/board-tv-linux-gnueabi/linux-omap5-omapzoom*/git/ linux/
 			cp build.sh clean.sh debug.sh menu.sh _env.sh linux/
 			chmod +x linux/*.sh
 			echo ;echo "--- Setup done ---"; echo
