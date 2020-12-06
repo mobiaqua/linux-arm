@@ -2,4 +2,4 @@
 
 . _env.sh
 
-arm-linux-gnueabi-gdb vmlinux
+${CROSS_COMPILE}gdb vmlinux

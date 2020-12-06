@@ -4,4 +4,4 @@
 
 #export KCFLAGS=-DDEBUG
 
-make ARCH=arm uImage -j4
+make ARCH=arm uImage -j8

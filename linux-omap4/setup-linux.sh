@@ -1,25 +1,31 @@
 #!/bin/bash
 
-[ -z "${OE_BASE}" ] && echo "Script require OE_BASE and DISTRO configured by OE environment." && exit 1
+[ -z "${OE_BASE}" ] && echo "Script require OE_BASE, DISTRO and TARGET configured by Yocto environment." && exit 1
 
 echo
-echo "Preparing linux sources..."
+echo "Preparing..."
 echo
 
 if [ ! -e linux/Makefile ]; then
 	curdir=$PWD
-	cd ${OE_BASE}/build-${DISTRO} &&
+	cd ${OE_BASE}/build-${DISTRO}-${TARGET} &&
 		source env.source &&
-		${OE_BASE}/bb/bin/bitbake linux-omap4 -cclean &&
-		${OE_BASE}/bb/bin/bitbake linux-omap4 -cconfigure && {
+		${OE_BASE}/bitbake/bin/bitbake linux-omap4 -cclean &&
+		${OE_BASE}/bitbake/bin/bitbake linux-omap4 -cconfigure && {
 			cd ${curdir}
 			echo
-			echo "Copy linux sources..."
+			echo "Copy linux sources and toolchain..."
 			echo
-			cp -R ${OE_BASE}/build-${DISTRO}/tmp/work/board-tv-linux-gnueabi/linux-omap4-*/git/ linux/
+			cp -R ${OE_BASE}/build-${DISTRO}-${TARGET}/tmp/work-shared/board-tv/kernel-source linux/
+			cp ${OE_BASE}/build-${DISTRO}-${TARGET}/tmp/work/board_tv-*-linux-gnueabi/linux-omap4/*/*-standard-build/.config* linux/
 			cp build.sh clean.sh debug.sh menu.sh _env.sh linux/
 			chmod +x linux/*.sh
-			echo ;echo "--- Setup done ---"; echo
+			cp -R ${OE_BASE}/build-${DISTRO}-${TARGET}/tmp/work/board_tv-*-linux-gnueabi/linux-omap4/*/recipe-sysroot-native sysroot-native/
+		} &&
+		${OE_BASE}/bitbake/bin/bitbake linux-omap4 -cclean && {
+			echo
+			echo "--- Setup done ---"
+			echo
 		}
 else
 	echo
