@@ -2,4 +2,4 @@
 
 . _env.sh
 
-make ARCH=x86_64 clean
+make ARCH=arm64 clean

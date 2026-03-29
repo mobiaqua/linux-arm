@@ -10,8 +10,8 @@ if [ ! -e linux/Makefile ]; then
 	curdir=$PWD
 	cd ${OE_BASE}/build-${DISTRO}-${TARGET} &&
 		source env.source &&
-		${OE_BASE}/bitbake/bin/bitbake linux-ti-up -cclean &&
-		${OE_BASE}/bitbake/bin/bitbake linux-ti-up -cconfigure && {
+		${OE_BASE}/bitbake/bin/bitbake linux-ti64 -cclean &&
+		${OE_BASE}/bitbake/bin/bitbake linux-ti64 -cconfigure && {
 			cd ${curdir}
 			echo
 			echo "Copy linux sources..."
